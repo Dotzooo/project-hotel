@@ -1,0 +1,180 @@
+@use "../abstracts/fonts.scss" as fonts;
+
+.banner {
+  //   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-size: cover;
+
+  &-container {
+    padding: 40px 20px 0px 20px;
+  }
+
+  &-header {
+    .banner-title {
+      font-size: 28px;
+      // @include fonts.text-h4;
+    }
+
+    .banner-line {
+      margin-top: 20px;
+      width: 45px;
+      height: 2px;
+      background: linear-gradient(90deg, #be9c7c 0%, #fff 100%);
+      transform: rotate(90deg);
+      margin: 40px auto 0;
+    }
+  }
+
+  &-content {
+    width: 300px !important;
+    margin-top: 40px !important;
+    margin-left: auto;
+    padding: 60px 20px 60px 0px;
+    border-radius: 40px;
+    border-top: 1px solid #f5f7f9;
+    border-right: 1px solid #f5f7f9;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 100%
+    );
+    backdrop-filter: blur(10px);
+
+    .banner-info {
+      transform: translateX(-3rem);
+
+      .banner-location,
+      .banner-choice {
+        color: $white;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 57.6px */
+        letter-spacing: 2.4px;
+        text-wrap: nowrap;
+      }
+
+      .banner-description {
+        color: $whisper;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; /* 24px */
+        letter-spacing: 0.32px;
+      }
+
+      .banner-button {
+        width: 300px;
+        padding: 20px;
+        margin-top: 40px;
+        border-radius: 8px;
+
+        &:hover {
+          background: $beige;
+          border-color: $beige;
+
+          .button-text {
+            color: $white;
+          }
+          .button-line {
+            background: $white;
+          }
+        }
+
+        .button-text {
+          color: #000;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 100%;
+          letter-spacing: 1.2px;
+          margin-right: 8px;
+        }
+
+        .button-line {
+          display: inline-block;
+          width: 80px;
+          height: 1px;
+          background: #000;
+        }
+      }
+    }
+  }
+
+  .banner-carousel__indicators {
+    transform: translateY(-4vh);
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+
+      .carousel-indicator-item {
+        width: 32px;
+        height: 4px;
+        background-color: $sauvignon;
+        margin-right: 8px;
+        cursor: pointer;
+        border-radius: 100px;
+        transition: width, background-color 0.3s;
+
+        &.active {
+          width: 60px;
+          background-color: $beige;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .banner {
+    &-container {
+      padding: 236px 80px 40px 80px;
+    }
+
+    &-header {
+      .banner-line {
+        width: 500px;
+        transform: rotate(0deg);
+        margin: 40px 0 0;
+      }
+    }
+
+    &-content {
+      width: auto !important;
+      padding: 96px 200px 96px 0px;
+      border-radius: 80px;
+
+      .banner-info {
+        width: 100%;
+        transform: translateX(-5rem);
+
+        .banner-location,
+        .banner-choice {
+          font-size: 60px;
+          letter-spacing: 5px;
+          margin-bottom: 0;
+        }
+
+        .banner-description {
+          font-size: 24px;
+          font-weight: 400;
+          line-height: 120%;
+          letter-spacing: 1.6px;
+          text-wrap: nowrap;
+          margin-top: 24px;
+          margin-bottom: 60px;
+        }
+
+        .banner-button {
+          width: 590px;
+
+          .button-line {
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use "_colors.scss" as *;
+
+.text-h1 {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 57.6px */
+  letter-spacing: 2.4px;
+}
+
+.text-h2 {
+  color: $beige;
+
+  /* H2. 40px B */
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 48px */
+  letter-spacing: 2px;
+  margin-bottom: 0;
+}
+
+.text-h4 {
+  color: $beige;
+
+  /* H4. 28px B */
+  font-family: "Noto Serif TC";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 33.6px */
+  letter-spacing: 1.4px;
+}
+
+.text-h5 {
+  color: $beige;
+
+  /* H5. 24px B */
+  font-family: "Noto Serif TC";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 28.8px */
+  letter-spacing: 1.2px;
+  margin-bottom: 0;
+}
+
+.text-title {
+  /* Title 16px B */
+  font-family: "Noto Serif TC";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+  letter-spacing: 0.32px;
+}
