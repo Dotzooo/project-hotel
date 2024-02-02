@@ -1,4 +1,4 @@
-import Container from "react-bootstrap/Container";
+import { Container } from "react-bootstrap";
 import Carousel from "@/components/front/Carousel";
 import { Slide } from "@/components/front/components.interface";
 
@@ -35,7 +35,7 @@ export default function Banner() {
       fluid
       className="banner d-flex justify-content-center align-items-center"
     >
-      <Carousel slides={slidesData} interval={3000} />
+      <Carousel slides={slidesData} interval={5000} />
     </Container>
   );
 }
