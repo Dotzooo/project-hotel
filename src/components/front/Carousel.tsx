@@ -34,8 +34,8 @@ const CarouselSlide = ({
           lg={6}
           className="banner-header d-flex flex-column justify-content-center text-center text-md-start"
         >
-          <h1 className="banner-title text-h2">{title}</h1>
-          <h2 className="banner-subtitle text-h5">{subtitle}</h2>
+          <h1 className="banner-title">{title}</h1>
+          <h2 className="banner-subtitle">{subtitle}</h2>
           <p className="banner-line"></p>
         </Col>
         <Col sm={12} lg={6} className="banner-content">

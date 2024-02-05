@@ -1,6 +1,4 @@
-@use "_colors.scss" as *;
-
-.text-h1 {
+@mixin text-h1 {
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
@@ -8,9 +6,7 @@
   letter-spacing: 2.4px;
 }
 
-.text-h2 {
-  color: $beige;
-
+@mixin text-h2 {
   /* H2. 40px B */
   font-size: 40px;
   font-style: normal;
@@ -20,11 +16,8 @@
   margin-bottom: 0;
 }
 
-.text-h4 {
-  color: $beige;
-
+@mixin text-h4 {
   /* H4. 28px B */
-  font-family: "Noto Serif TC";
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
@@ -32,11 +25,8 @@
   letter-spacing: 1.4px;
 }
 
-.text-h5 {
-  color: $beige;
-
+@mixin text-h5 {
   /* H5. 24px B */
-  font-family: "Noto Serif TC";
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -45,9 +35,8 @@
   margin-bottom: 0;
 }
 
-.text-title {
+@mixin text-title {
   /* Title 16px B */
-  font-family: "Noto Serif TC";
   font-size: 16px;
   font-style: normal;
   font-weight: 700;

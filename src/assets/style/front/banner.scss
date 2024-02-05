@@ -1,5 +1,3 @@
-@use "../abstracts/fonts.scss" as fonts;
-
 .banner {
   background-size: cover;
 
@@ -9,15 +7,20 @@
 
   &-header {
     .banner-title {
-      font-size: 28px;
-      // @include fonts.text-h4;
+      color: $beige;
+      @include text-h4;
+    }
+
+    .banner-subtitle {
+      color: $beige;
+      @include text-h5;
     }
 
     .banner-line {
       margin-top: 20px;
       width: 45px;
       height: 2px;
-      background: linear-gradient(90deg, #be9c7c 0%, #fff 100%);
+      background: linear-gradient(90deg, $beige 0%, $white 100%);
       transform: rotate(90deg);
       margin: 40px auto 0;
     }
@@ -29,8 +32,8 @@
     margin-left: auto;
     padding: 60px 20px 60px 0px;
     border-radius: 40px;
-    border-top: 1px solid #f5f7f9;
-    border-right: 1px solid #f5f7f9;
+    border-top: 1px solid $aliceBlue;
+    border-right: 1px solid $aliceBlue;
     background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,

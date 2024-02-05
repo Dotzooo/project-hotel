@@ -1,0 +1,211 @@
+.nav {
+  height: 100vh;
+  padding: 16px 12px !important;
+
+  &-logo {
+    width: 110px;
+    height: 40px;
+  }
+
+  &-toggle {
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    outline: 0;
+    right: 20px;
+    top: 5px;
+    cursor: pointer;
+    transition: background-color 0.15s linear;
+  }
+
+  &-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    visibility: hidden;
+    list-style: none;
+    padding: 0;
+
+    .nav-menu__item {
+      width: 100%;
+      padding: 16px;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0, 0.995, 0.99, 1) 0.3s;
+
+      .nav__link {
+        display: block;
+        color: $white;
+        text-decoration: none;
+        @include text-title;
+        padding: 1rem;
+        border-radius: 8px;
+
+        &:hover,
+        &:focus {
+          outline: 0;
+          background: $beige;
+        }
+      }
+    }
+
+    @for $i from 1 through 5 {
+      &__item:nth-child(#{$i}) {
+        transform: translateY(-40px * $i);
+      }
+    }
+  }
+
+  .menuicon {
+    display: block;
+    cursor: pointer;
+    color: $white;
+
+    transform: rotate(0deg);
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &__bar,
+    &__circle {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+    &__bar {
+      transform: rotate(0deg);
+      transform-origin: 50% 50%;
+      transition: transform 0.25s ease-in-out;
+    }
+    &__circle {
+      transition: stroke-dashoffset 0.3s linear 0.1s;
+      stroke-dashoffset: circumference(23); // <circle>'s radius
+      stroke-dasharray: circumference(23);
+    }
+  }
+
+  .splash {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 1px;
+    height: 1px;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      background-color: $black;
+
+      // screen diameter can be 142vmax at most,
+      // circle needs to be twice that size to cover it
+      width: 284vmax;
+      height: 284vmax;
+      top: -142vmax;
+      left: -142vmax;
+
+      transform: scale(0);
+      transform-origin: 50% 50%;
+      transition: transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+
+      // will-change tells the browser we plan to
+      // animate this property in the near future
+      will-change: transform;
+    }
+  }
+
+  .nav-menu.nav--open {
+    visibility: visible;
+
+    .nav-menu__item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // mobile toggle animation
+  .nav-toggle.active {
+    .menuicon {
+      color: white;
+      transform: rotate(180deg);
+
+      &__circle {
+        stroke-dashoffset: 0;
+      }
+      &__bar:nth-child(1),
+      &__bar:nth-child(4) {
+        opacity: 0;
+      }
+      &__bar:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      &__bar:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .splash.active::after {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 992px) {
+  .nav {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-logo {
+      width: 196px;
+      height: 72px;
+    }
+
+    &-toggle {
+      display: none;
+    }
+
+    &-menu {
+      width: auto !important;
+      flex-direction: row;
+      visibility: visible;
+      margin-bottom: 0;
+
+      .nav-menu__item {
+        opacity: 1;
+        padding: 0;
+        margin-right: 8px;
+
+        &:nth-last-child(1) {
+          margin-right: 0;
+        }
+
+        .nav-link {
+          display: inline-block;
+          @include text-title;
+        }
+      }
+
+      @for $i from 1 through 5 {
+        &__item:nth-child(#{$i}) {
+          transform: translateY(0px * $i);
+        }
+      }
+    }
+  }
+  .navbar {
+    padding: 24px 80px;
+
+    &-logo {
+      width: 196px;
+      height: 72px;
+    }
+  }
+}
