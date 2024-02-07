@@ -1,0 +1,102 @@
+.home-news {
+  position: relative;
+  background: $lightOrange;
+  padding: 120px 0;
+
+  .news-title {
+    @include text-h1;
+    p {
+      color: $beige;
+      margin: 0;
+    }
+  }
+
+  .news-line {
+    margin-top: 20px;
+    width: 140px;
+    height: 2px;
+    background: linear-gradient(90deg, $beige 0%, $white 100%);
+  }
+
+  .news-card {
+    position: relative;
+    background: transparent;
+    border: 0;
+    margin-bottom: 40px;
+    transition: box-shadow 0.5s linear;
+
+    &:hover {
+      box-shadow: rgba($beige, 0.4) 5px 5px, rgba($beige, 0.3) 10px 10px,
+        rgba($beige, 0.2) 15px 15px, rgba($beige, 0.1) 20px 20px,
+        rgba($beige, 0.05) 25px 25px;
+    }
+
+    &_content {
+      padding-top: 40px;
+      padding-bottom: 40px;
+
+      &__title {
+        @include text-h3;
+        color: $black;
+        margin-bottom: 24px;
+      }
+
+      &__subtitle {
+        @include text-body;
+        color: $matterhorn;
+      }
+    }
+  }
+
+  .image-dot {
+    position: absolute;
+
+    &.dot1 {
+      right: 5vw;
+      top: 20vh;
+    }
+
+    &.dot2 {
+      left: 5vw;
+      bottom: -10vh;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .home-news {
+    .news-title {
+      @include text-h3;
+    }
+
+    .news-card {
+      &:first-child {
+        margin-top: 40px;
+      }
+
+      &_content {
+        &__title {
+          @include text-h4;
+        }
+
+        &__subtitle {
+          @include text-body2;
+        }
+      }
+    }
+
+    .image-dot {
+      &.dot1 {
+        top: 10vh;
+      }
+      &.dot2 {
+        bottom: -20vh;
+      }
+    }
+  }
+}

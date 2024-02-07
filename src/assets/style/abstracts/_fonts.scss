@@ -16,6 +16,15 @@
   margin-bottom: 0;
 }
 
+@mixin text-h3 {
+  /* H3. 32px B */
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 38.4px */
+  letter-spacing: 1.6px;
+}
+
 @mixin text-h4 {
   /* H4. 28px B */
   font-size: 28px;
@@ -42,4 +51,21 @@
   font-weight: 700;
   line-height: 150%; /* 24px */
   letter-spacing: 0.32px;
+}
+
+@mixin text-body {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  letter-spacing: 0.32px;
+}
+
+@mixin text-body2 {
+  /* Body2 14px R */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+  letter-spacing: 0.28px;
 }

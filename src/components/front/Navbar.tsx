@@ -70,7 +70,6 @@ const Navbar = () => {
         id="menu"
         tabIndex={-1}
         aria-label="main navigation"
-        // hidden={!isMenuOpen}
       >
         <li className="nav-menu__item">
           <a href="#" className="nav__link">
