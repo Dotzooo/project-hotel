@@ -1,0 +1,94 @@
+.about {
+  background: $black;
+  padding: 120px 0;
+
+  &-content {
+    display: flex;
+    padding: 80px;
+    justify-content: flex-end;
+    background-image: url("src/assets/image/about.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    .about-info {
+      display: flex;
+      width: 1044px;
+      padding: 80px;
+      flex-direction: column;
+      gap: 40px;
+      border-radius: 80px 80px 0px 80px;
+      border-bottom: 1px solid $white;
+      border-left: 1px solid $white;
+      background: linear-gradient(
+        180deg,
+        rgba($black, 0.8) 0%,
+        rgba($beige, 0.8) 100%
+      );
+      backdrop-filter: blur(10px);
+
+      .about-header {
+        display: flex;
+        align-items: center;
+
+        .about-title {
+          color: $white;
+          @include text-h1;
+
+          p {
+            margin: 0;
+          }
+        }
+
+        .about-line {
+          margin-left: 40px;
+          width: 140px;
+          height: 2px;
+          background: linear-gradient(90deg, $beige 0%, $white 100%);
+        }
+      }
+
+      .about-description {
+        .about-text {
+          color: $white;
+          @include text-body;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .about {
+    &-content {
+      padding: 40px;
+      justify-content: center;
+
+      .about-info {
+        padding: 50px 24px 24px;
+
+        .about-header {
+          justify-content: space-between;
+
+          .about-title {
+            @include text-h3;
+
+            p {
+              margin: 0;
+            }
+          }
+
+          .about-line {
+            width: 161px;
+          }
+        }
+
+        .about-description {
+
+          .about-text {
+            @include text-body2;
+          }
+        }
+      }
+    }
+  }
+}
